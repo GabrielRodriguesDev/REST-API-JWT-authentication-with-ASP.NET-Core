@@ -977,11 +977,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\Rest-API-with-ASP.NET-Core-Part-2\\Rest-API-with-ASP.NET-Core-Part-1.csproj",
-      "projectName": "Rest-API-with-ASP.NET-Core-Part-1",
-      "projectPath": "D:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\Rest-API-with-ASP.NET-Core-Part-2\\Rest-API-with-ASP.NET-Core-Part-1.csproj",
+      "projectUniqueName": "D:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\REST-API-JWT-authentication-with-ASP.NET-Core\\REST-API-JWT-authentication-with-ASP.NET-Core.csproj",
+      "projectName": "REST-API-JWT-authentication-with-ASP.NET-Core",
+      "projectPath": "D:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\REST-API-JWT-authentication-with-ASP.NET-Core\\REST-API-JWT-authentication-with-ASP.NET-Core.csproj",
       "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-      "outputPath": "D:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\Rest-API-with-ASP.NET-Core-Part-2\\obj\\",
+      "outputPath": "D:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\REST-API-JWT-authentication-with-ASP.NET-Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",

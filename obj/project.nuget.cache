@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y/aH0KDDWyWgvPKbONexfjLLjrkCso3wPrpY9QyslhVkwUZJutrMicEj7RN2x4dj6aDOJIy5VCBgiLmLtyqP2w==",
+  "dgSpecHash": "N/2ZgGB+S+OAspsSAUYq/c0XqdBnd8vn8ZeSzh3ThCRE58r3xIP7os73vKyeQkQ4JbweKKQoYRfg9SWeKIXqUA==",
   "success": true,
-  "projectFilePath": "D:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\Rest-API-with-ASP.NET-Core-Part-2\\Rest-API-with-ASP.NET-Core-Part-1.csproj",
+  "projectFilePath": "D:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\REST-API-JWT-authentication-with-ASP.NET-Core\\REST-API-JWT-authentication-with-ASP.NET-Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gabri\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

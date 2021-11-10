@@ -14,5 +14,6 @@ namespace REST_API_JWT_authentication_with_ASP.NET_Core.Data
         }
 
         public DbSet<Produto> Produtos {get;set;}
+        public DbSet<Usuario> Usuarios {get;set;}
     }
 }
