@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 namespace REST_API_JWT_authentication_with_ASP.NET_Core.Models
 {
     public class Usuario
-    {
+    {   
+
+        public Usuario()
+        {
+            this.Id = Guid.NewGuid();
+        }
         public Guid Id { get; set; }
         public string Email { get; set; }
 
