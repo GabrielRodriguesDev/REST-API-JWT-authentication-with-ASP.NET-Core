@@ -24,5 +24,42 @@ namespace REST_API_JWT_authentication_with_ASP.NET_Core.Controllers
             this._database.SaveChanges();
             return Ok(new{mensage= "Usuario cadastrado com sucesso", usuario });
         }
+
+        [HttpPost("Login")]
+        public IActionResult Login([FromBody] Usuario credenciais) {
+
+
+            try
+            {
+                var usuario = this._database.Usuarios.First(user => user.Email.Equals(credenciais.Email));
+
+                if(usuario != null) {
+                    if(usuario.Senha.Equals(credenciais.Senha)){
+                        Response.StatusCode = 200;
+                        return new JsonResult(new{menssage="Login realizado com sucesso", usuario});
+                    } else {
+                        Response.StatusCode = 401;
+                        return new JsonResult(new {menssage="Senha incorreta."});
+                    }
+                } else {
+                    Response.StatusCode = 401;
+                    return new JsonResult(new {menssage="Usuario inválido."});
+                }
+            }
+            catch (System.Exception)
+            {
+                Response.StatusCode = 401;
+                return new JsonResult(new {menssage="Usuario inválido."});
+            }
+        }
+
+
+        [HttpGet]
+        public IActionResult GetUsers(){
+            var usuarios = this._database.Usuarios.ToList();
+            
+            Response.StatusCode = 200;
+            return new JsonResult(usuarios);
+        }
     }
 }

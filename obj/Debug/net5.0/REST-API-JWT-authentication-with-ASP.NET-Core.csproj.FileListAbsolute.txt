@@ -35,3 +35,4 @@ D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\REST-API-JWT-authentication-wi
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\REST-API-JWT-authentication-with-ASP.NET-Core\obj\Debug\net5.0\ref\REST-API-JWT-authentication-with-ASP.NET-Core.dll
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\REST-API-JWT-authentication-with-ASP.NET-Core\obj\Debug\net5.0\REST-API-JWT-authentication-with-ASP.NET-Core.pdb
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\REST-API-JWT-authentication-with-ASP.NET-Core\obj\Debug\net5.0\REST-API-JWT-authentication-with-ASP.NET-Core.genruntimeconfig.cache
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\REST-API-JWT-authentication-with-ASP.NET-Core\obj\Debug\net5.0\REST-API-JWT-authentication-with-ASP.NET-Core.csproj.CopyComplete
