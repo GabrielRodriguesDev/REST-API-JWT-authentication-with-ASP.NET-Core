@@ -7,6 +7,9 @@ using Microsoft.OpenApi.Models;
 using REST_API_JWT_authentication_with_ASP.NET_Core.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace REST_API_JWT_authentication_with_ASP.NET_Core
 {
@@ -26,6 +29,23 @@ namespace REST_API_JWT_authentication_with_ASP.NET_Core
                 options.UseMySql(
                     Configuration.GetConnectionString("DefaultConnection"), ServerVersion.AutoDetect(Configuration.GetConnectionString("DefaultConnection"))));
 
+            string chaveDeSeguranca = "GabrielSilvaRodriguesMota";
+
+            var chaveSimetrica = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(chaveDeSeguranca));
+            
+            //Como o sistema deve ler o Token
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+                options.TokenValidationParameters = new TokenValidationParameters{
+                    //Atributos do Token.
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    //Dados de validação de um JWT (Autenticação).
+                    ValidIssuer = "Gabriel Silva Rodrigues Mota",
+                    ValidAudience = "usuario_comum",
+                    IssuerSigningKey = chaveSimetrica
+                };
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -56,6 +76,8 @@ namespace REST_API_JWT_authentication_with_ASP.NET_Core
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication(); //  Iss que aplica o sistema de autentição na sua aplicação.
 
             app.UseAuthorization();
 
