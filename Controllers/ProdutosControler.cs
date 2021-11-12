@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using REST_API_JWT_authentication_with_ASP.NET_Core.Data;
 using REST_API_JWT_authentication_with_ASP.NET_Core.Models;
@@ -9,6 +10,7 @@ using REST_API_JWT_authentication_with_ASP.NET_Core.Models;
 namespace REST_API_JWT_authentication_with_ASP.NET_Core.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
     public class ProdutosControler : ControllerBase
     {
@@ -29,6 +31,8 @@ namespace REST_API_JWT_authentication_with_ASP.NET_Core.Controllers
 
 
         [HttpGet ("{id}")]
+        [Authorize(Roles = "Admin")]
+
         public IActionResult getProduto(Guid id){
             try
             {
