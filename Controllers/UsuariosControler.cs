@@ -1,12 +1,14 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using REST_API_JWT_authentication_with_ASP.NET_Core.Models;
 using REST_API_JWT_authentication_with_ASP.NET_Core.Data;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System;
 
 namespace REST_API_JWT_authentication_with_ASP.NET_Core.Controllers
+
 {
     [ApiController]
     [Route("[controller]")]
@@ -35,8 +37,25 @@ namespace REST_API_JWT_authentication_with_ASP.NET_Core.Controllers
 
                 if(usuario != null) {
                     if(usuario.Senha.Equals(credenciais.Senha)){
+
+
+                            //Chave de segurança
+                        string chaveDeSeguranca = "GabrielSilvaRodriguesMota";
+
+                        var chaveSimetrica = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(chaveDeSeguranca));
+                        var credenciaisDeAcesso = new SigningCredentials(chaveSimetrica, SecurityAlgorithms.HmacSha256Signature);
+
+                        var JWT = new JwtSecurityToken(
+                            issuer: "Gabriel Silva Rodrigues Mota", //Quem está fornecendo o JWT para o usuario.
+                            expires: DateTime.UtcNow.AddHours(2), //Token válido por 1 hora
+                            audience: "usuario_comum",
+                            signingCredentials: credenciaisDeAcesso
+                        ); 
+
+
+
                         Response.StatusCode = 200;
-                        return new JsonResult(new{menssage="Login realizado com sucesso", usuario});
+                        return new JsonResult(new JwtSecurityTokenHandler().WriteToken(JWT));
                     } else {
                         Response.StatusCode = 401;
                         return new JsonResult(new {menssage="Senha incorreta."});
